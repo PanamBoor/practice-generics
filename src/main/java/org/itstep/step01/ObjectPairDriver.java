@@ -18,7 +18,7 @@ public class ObjectPairDriver {
         ObjectPair[] stadiums = new ObjectPair[3];
         stadiums[0] = new ObjectPair("Bridgeforth Stadium", 25000);
         stadiums[1] = new ObjectPair("Michigan Stadium", 109901);
-        stadiums[2] = new ObjectPair("Lane Stadium", "66,233");
+        stadiums[2] = new ObjectPair("Lane Stadium", 66233);
 
         System.out.println(stadiums[0]);
 
@@ -33,8 +33,15 @@ public class ObjectPairDriver {
      */
     public static String largestStadium(ObjectPair[] stadiums) {
         // TODO: реализуйте это метод в соответствии с комментариями
-
-        return "";
+        int col = 0;
+        int max =(int) stadiums[col].getSecond();
+        for (int i = 0; i < stadiums.length; i++) {
+            if ((int)stadiums[i].getSecond()>max){
+                col=i;
+                max =(int)stadiums[i].getSecond();
+            }
+        }
+        return stadiums[col].getFirst().toString();
     }
 
 }
